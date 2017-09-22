@@ -20,6 +20,7 @@ public class Application {
 		ApplicationContext ctx = SpringApplication.run(Application.class, args);
 		String [] beanNames = ctx.getBeanDefinitionNames();
 		Arrays.stream(beanNames).forEach(System.out::println);
+		System.out.println("from master local branch");
 	}
 
 	@Profile("prod")
