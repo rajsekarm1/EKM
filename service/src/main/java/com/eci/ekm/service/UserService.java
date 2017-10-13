@@ -22,5 +22,10 @@ public class UserService {
 		return userList;
 	}
 	
+	public User createUser(User user){
+		User dbUser = repository.save(user);
+		return dbUser;
+	}
+	
 	
 }
