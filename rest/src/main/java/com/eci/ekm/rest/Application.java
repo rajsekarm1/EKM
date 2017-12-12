@@ -29,7 +29,7 @@ public class Application {
 		ApplicationContext ctx = SpringApplication.run(Application.class, args);
 		String [] beanNames = ctx.getBeanDefinitionNames();
 		//Arrays.stream(beanNames).forEach(System.out::println);
-		
+		//checking the file
 	}
 
 	@Profile("dev")
@@ -38,6 +38,7 @@ public class Application {
 		return (runner) -> {
 			userService.createUser(new User("Raja","Sekar",User.Gender.Male));
 			userService.createUser(new User("Raja1","Sekar1",User.Gender.Female));
+			userService.createUser(new User("Raja4","Sekar4",User.Gender.Female));
 		};
 	}
 	
