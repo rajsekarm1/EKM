@@ -1,41 +1,30 @@
 package com.eci.ekm.dataobject;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.mongodb.morphia.annotations.Entity;
 
-@Entity
-public class User {
+@Entity(value="eci_users")
+public class User extends BaseEntity{
 	
 	public enum Gender {
 		Male,
 		Female;
 	}
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
 	private String firstName;
 	private String lastName;
 	private Gender gender;
 	
 	public User(){
-		
+		super();
 	}
 	
 	public User(String firstName, String lastName,Gender gender){
+		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.gender = gender;
 	}
-	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+
 	public String getFirstName() {
 		return firstName;
 	}
@@ -57,6 +46,7 @@ public class User {
 
 	@Override
 	public String toString() {
+		System.out.println("here");
 		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender + "]";
 	}
 	
